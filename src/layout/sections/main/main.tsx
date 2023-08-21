@@ -3,6 +3,7 @@ import { Button } from '../../../components/button/button';
 import styled from 'styled-components';
 import mainPhoto from '../../../assets/images/main_section/main.webp';
 import { FlexWrapper } from '../../../components/common/flexWrapper';
+import { Photo } from '../../../components/photo/photo';
 
 export const Main = () => {
     return (
@@ -69,12 +70,6 @@ const StyledMainImage = styled.div`
 `;
 const StyledMainStatistics = styled.div`
     grid-area: statistics;
-`;
-
-const Photo = styled.img`
-    width: 465px;
-    height: 545px;
-    object-fit: cover;
 `;
 
 const StyledCardInfo = styled.div``;
