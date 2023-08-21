@@ -19,7 +19,7 @@ export const Main = () => {
                 </p>
                 <div>
                     <Button variant={'contained'}>Explore Now</Button>
-                    <Button variant={'outlined'}>Learn More</Button>
+                    <Button variant={'link'}>Learn More</Button>
                 </div>
             </StyledMainInfo>
             <StyledMainStatistics>
