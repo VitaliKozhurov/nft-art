@@ -5,6 +5,7 @@ import { Amazing } from './layout/sections/amazing/amazing';
 import { BestNft } from './layout/sections/bestNFT/bestNFT';
 import { Popular } from './layout/sections/popular/popular';
 import { Subscribe } from './layout/sections/subscribe/subscribe';
+import { Footer } from './layout/footer/footer';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <BestNft />
             <Popular />
             <Subscribe />
+            <Footer />
         </div>
     );
 }
