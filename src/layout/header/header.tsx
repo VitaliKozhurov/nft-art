@@ -4,6 +4,7 @@ import { Menu } from '../../components/menu/menu';
 import { Logo } from '../../components/logo/logo';
 import { Container } from '../../components/container/container';
 import { FlexWrapper } from '../../components/common/flexWrapper';
+import { Button } from '../../components/button/button';
 
 const links = [
     { linkTitle: 'Marketplace', linkUrl: '#' },
@@ -19,6 +20,9 @@ export const Header = () => {
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo />
                     <Menu links={links} />
+                    <Button as={'a'} href={'#'} variant={'contained'}>
+                        Contact
+                    </Button>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -26,5 +30,5 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: rgba(26, 209, 188, 0.73);
+    padding: 28px 0;
 `;
