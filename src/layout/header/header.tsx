@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Menu } from '../../components/menu/menu';
 import { Logo } from '../../components/logo/logo';
+import { Container } from '../../components/container/container';
+import { FlexWrapper } from '../../components/common/flexWrapper';
 
 const links = [
     { linkTitle: 'Marketplace', linkUrl: '#' },
@@ -12,17 +14,17 @@ const links = [
 
 export const Header = () => {
     return (
-        <>
-            <StyledHeader>
-                <Logo />
-                <Menu links={links} />
-            </StyledHeader>
-        </>
+        <StyledHeader>
+            <Container>
+                <FlexWrapper justify={'space-between'} align={'center'}>
+                    <Logo />
+                    <Menu links={links} />
+                </FlexWrapper>
+            </Container>
+        </StyledHeader>
     );
 };
 
 const StyledHeader = styled.header`
     background-color: rgba(26, 209, 188, 0.73);
-    display: flex;
-    justify-content: space-between;
 `;
