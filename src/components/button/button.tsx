@@ -27,6 +27,7 @@ const StyledButton = styled.button<Props>`
     font-size: 1rem;
     font-weight: 700;
     border-radius: 8px;
+    cursor: pointer;
 
     ${(props) =>
         props.variant === 'contained' &&
@@ -43,7 +44,7 @@ const StyledButton = styled.button<Props>`
             color: ${theme.colors.accent};
         `}
 
-    ${(props) =>
+  ${(props) =>
         props.variant === 'link' &&
         css<Props>`
             background-color: transparent;
