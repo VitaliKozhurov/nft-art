@@ -34,4 +34,8 @@ const StyledListItem = styled.li`
             color: ${theme.colors.textFont};
         }
     }
+    & > span {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 `;

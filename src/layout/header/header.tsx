@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Menu } from '../../components/menu/menu';
-import { Logo } from '../../components/logo/logo';
-import { Container } from '../../components/container/container';
-import { FlexWrapper } from '../../components/common/flexWrapper';
-import { Button } from '../../components/button/button';
+import { Button, Container, FlexWrapper, Logo, Menu } from '../../components';
 
 const links = [
     { linkTitle: 'Marketplace', linkUrl: '#' },

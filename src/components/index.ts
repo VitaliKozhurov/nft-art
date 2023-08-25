@@ -1,0 +1,15 @@
+export { About } from './about/about';
+export { AmazingCard } from './amazingCard/amazingCard';
+export { Button } from './button/button';
+export { FlexWrapper } from './common/flexWrapper';
+export { Container } from './common/container';
+export { Icon } from './icon/icon';
+export { Logo } from './logo/logo';
+export { MainImageCard } from './mainImageCard/mainImageCard';
+export { Menu } from './menu/menu';
+export { Photo } from './photo/photo';
+export { PopularCard } from './popularCard/popularCard';
+export { SectionDescription } from './sectionDescription/sectionDescription';
+export { SectionTitle } from './sectionTitle/sectionTitle';
+export { Socials } from './socials/socials';
+export { StatisticItem } from './statisticItem/statisticItem';

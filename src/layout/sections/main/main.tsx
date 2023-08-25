@@ -1,14 +1,9 @@
 import React from 'react';
-import { Button } from '../../../components/button/button';
-import styled from 'styled-components';
-import mainPhoto from '../../../assets/images/main_section/main.webp';
-import { FlexWrapper } from '../../../components/common/flexWrapper';
-import { Photo } from '../../../components/photo/photo';
-import { Container } from '../../../components/container/container';
 import { SectionTitle, TitleTextType } from '../../../components/sectionTitle/sectionTitle';
-import { SectionDescription } from '../../../components/sectionDescription/sectionDescription';
-import { StatisticItem } from '../../../components/statisticItem/statisticItem';
+import { Button, Container, MainImageCard, Photo, SectionDescription, StatisticItem } from '../../../components';
+import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
+import mainPhoto from '../../../assets/images/main_section/main.webp';
 
 const mainTitle: TitleTextType[] = [
     { text: ' Discover and Collect The Best NFTs', type: 'primary' },
@@ -41,21 +36,13 @@ export const Main = () => {
                         <StatisticItem key={item.title} title={item.title} count={item.count} />
                     ))}
                 </StyledListStatistics>
+
                 <StyledMainImage>
-                    <Photo src={mainPhoto} alt={'Main section photo'} />
-                    <FlexWrapper direction={'column'}>
-                        <FlexWrapper>
-                            <StyledCardInfo>
-                                <span>Ends in</span>
-                                <span>05:45:47</span>
-                            </StyledCardInfo>
-                            <StyledCardInfo>
-                                <span>Current bid</span>
-                                <span>0.24ETH</span>
-                            </StyledCardInfo>
-                        </FlexWrapper>
-                        <Button variant={'outlined'}>Place A Bid</Button>
-                    </FlexWrapper>
+                    <StyledPhotoWrapper>
+                        <Photo src={mainPhoto} alt={'Main section photo'} />
+                    </StyledPhotoWrapper>
+
+                    <MainImageCard />
                 </StyledMainImage>
             </StyledMain>
         </Container>
@@ -69,16 +56,18 @@ const StyledMain = styled.main`
     column-gap: 170px;
     grid-template-areas: 'info image' 'statistics image';
 `;
-
 const StyledMainInfo = styled.div`
     grid-area: info;
     padding-top: 26px;
 `;
+const StyledMainImage = styled.div`
+    position: relative;
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+`;
 const StyledButtonsBlock = styled.div`
     margin-bottom: 72px;
-`;
-const StyledMainImage = styled.div`
-    grid-area: image;
 `;
 const StyledListStatistics = styled.ul`
     grid-area: statistics;
@@ -90,5 +79,10 @@ const StyledListStatistics = styled.ul`
         border-left: 1px solid ${theme.colors.accent};
     }
 `;
-
-const StyledCardInfo = styled.div``;
+const StyledPhotoWrapper = styled.div`
+    max-width: 465px;
+    width: 100%;
+    max-height: 545px;
+    border-radius: 24px;
+    overflow: hidden;
+`;
