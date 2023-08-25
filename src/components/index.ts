@@ -13,3 +13,4 @@ export { SectionDescription } from './sectionDescription/sectionDescription';
 export { SectionTitle } from './sectionTitle/sectionTitle';
 export { Socials } from './socials/socials';
 export { StatisticItem } from './statisticItem/statisticItem';
+export { StyledSection } from './section/section';

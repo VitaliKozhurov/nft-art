@@ -7,7 +7,7 @@ import mainPhoto from '../../../assets/images/main_section/main.webp';
 
 const mainTitle: TitleTextType[] = [
     { text: ' Discover and Collect The Best NFTs', type: 'primary' },
-    { text: 'Digital Art.', type: 'accent' },
+    { text: ' Digital Art.', type: 'accent' },
 ];
 const mainDescription =
     'Get started with the easiest and most secure platform to buy and trade digital ART and NFT’s.\n' +

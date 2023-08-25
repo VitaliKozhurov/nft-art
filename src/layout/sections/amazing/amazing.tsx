@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlexWrapper } from '../../../components/common/flexWrapper';
-import { Button } from '../../../components/button/button';
+import { AmazingCard, Button, Container, FlexWrapper, SectionTitle, StyledSection } from '../../../components';
 import cyberpank from '../../../assets/images/amazing_section/amazing_cyberpank.webp';
 import surgeon from '../../../assets/images/amazing_section/amazing_surgeon.webp';
 import charge from '../../../assets/images/amazing_section/amazing_charge.webp';
-import { AmazingCard } from '../../../components/amazingCard/amazingCard';
+import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
+import styled from 'styled-components/dist/constructors/styled';
 
 const cardsData = [
     {
@@ -27,20 +27,26 @@ const cardsData = [
     },
 ];
 
+const amazingSectionTitle: TitleTextType[] = [
+    { text: 'Amazing', type: 'accent' },
+    { text: ' and Super Unique Art of This ', type: 'primary' },
+    { text: 'Week', type: 'accent' },
+];
+
 export const Amazing = () => {
     return (
-        <section>
-            <FlexWrapper>
-                <h2>
-                    <span>Amazing</span> and Super Unique Art of This <span>Week</span>
-                </h2>
-                <Button variant={'contained'}>See All</Button>
-            </FlexWrapper>
-            <FlexWrapper gap={'30px'}>
-                {cardsData.map((card) => (
-                    <AmazingCard {...card} />
-                ))}
-            </FlexWrapper>
-        </section>
+        <StyledSection>
+            <Container>
+                <FlexWrapper justify={'space-between'} align={'flex-end'} margin={'0 0 64px'}>
+                    <SectionTitle tagName={'h2'} title={amazingSectionTitle} maxWidth={'506px'} />
+                    <Button variant={'contained'}>See All</Button>
+                </FlexWrapper>
+                <FlexWrapper gap={'30px'}>
+                    {cardsData.map((card) => (
+                        <AmazingCard {...card} />
+                    ))}
+                </FlexWrapper>
+            </Container>
+        </StyledSection>
     );
 };

@@ -6,6 +6,7 @@ type Props = {
     align?: string;
     wrap?: string;
     gap?: string;
+    margin?: string;
 };
 
 export const FlexWrapper = styled.div<Props>`
@@ -15,4 +16,5 @@ export const FlexWrapper = styled.div<Props>`
     align-items: ${(props) => props.align || 'stretch'};
     justify-content: ${(props) => props.justify || 'flex-start'};
     flex-wrap: ${(props) => props.wrap || 'no-wrap'};
+    margin: ${(props) => props.margin || '0'};
 `;

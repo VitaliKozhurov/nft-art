@@ -7,20 +7,23 @@ export type TitleTextType = { text: string; type: 'primary' | 'accent' };
 type Props = {
     tagName: 'h1' | 'h2';
     title: TitleTextType[];
+    maxWidth?: string;
 };
 
-export const SectionTitle: FC<Props> = ({ tagName, title }) => {
+export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
     return (
-        <StyledSectionTitle as={tagName} tagName={tagName}>
+        <StyledSectionTitle as={tagName} maxWidth={maxWidth || 'auto'} tagName={tagName}>
             {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan>{el.text}</StyledSpan>))}
         </StyledSectionTitle>
     );
 };
 
-const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2' }>`
+const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2'; maxWidth: string }>`
     font-family: Spectral, sans-serif;
+    letter-spacing: -2px;
     font-size: ${(props) => (props.tagName === 'h1' ? '64px' : '48px')};
     color: ${theme.colors.textFont};
+    max-width: ${(props) => props.maxWidth};
     font-weight: 500;
     line-height: 1.2;
 `;
