@@ -18,21 +18,21 @@ export const cardsData = [
     {
         imageUrl: ranson,
         avatarUrl: ransonIcon,
-        ownerName: 'Osvaldo Percy',
+        ownerName: 'Ranson Sqiure',
     },
     {
         imageUrl: cristio,
         avatarUrl: cristioIcon,
-        ownerName: 'Osvaldo Percy',
+        ownerName: 'Cristio leo',
     },
     {
         imageUrl: sebastian,
         avatarUrl: sebastianIcon,
-        ownerName: 'Osvaldo Percy',
+        ownerName: 'Sebastian waltan',
     },
     {
         imageUrl: abraham,
         avatarUrl: abrahamIcon,
-        ownerName: 'Osvaldo Percy',
+        ownerName: 'Abraham Zack',
     },
 ];

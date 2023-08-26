@@ -26,6 +26,7 @@ const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2'; maxWidth: string }>
     max-width: ${(props) => props.maxWidth};
     font-weight: 500;
     line-height: 1.2;
+    text-align: left;
 `;
 
 const StyledSpan = styled.span`
