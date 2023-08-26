@@ -38,7 +38,7 @@ export const Amazing = () => {
         <StyledSection>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'flex-end'} margin={'0 0 64px'}>
-                    <SectionTitle tagName={'h2'} title={amazingSectionTitle} maxWidth={'506px'} />
+                    <SectionTitle tagName={'h2'} title={amazingSectionTitle} maxWidth={'518px'} />
                     <Button variant={'contained'}>See All</Button>
                 </FlexWrapper>
                 <FlexWrapper gap={'30px'}>

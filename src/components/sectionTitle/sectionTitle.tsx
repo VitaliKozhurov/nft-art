@@ -12,7 +12,7 @@ type Props = {
 
 export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
     return (
-        <StyledSectionTitle as={tagName} maxWidth={maxWidth || 'auto'} tagName={tagName}>
+        <StyledSectionTitle as={tagName} maxWidth={maxWidth || '100%'} tagName={tagName}>
             {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan>{el.text}</StyledSpan>))}
         </StyledSectionTitle>
     );
@@ -20,7 +20,7 @@ export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
 
 const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2'; maxWidth: string }>`
     font-family: Spectral, sans-serif;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     font-size: ${(props) => (props.tagName === 'h1' ? '64px' : '48px')};
     color: ${theme.colors.textFont};
     max-width: ${(props) => props.maxWidth};

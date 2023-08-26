@@ -28,6 +28,7 @@ const StyledButton = styled.button<Props>`
     font-weight: 700;
     border-radius: 8px;
     cursor: pointer;
+    line-height: 1.7;
 
     ${(props) =>
         props.variant === 'contained' &&
