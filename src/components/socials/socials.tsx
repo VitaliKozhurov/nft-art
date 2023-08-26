@@ -23,4 +23,10 @@ export const Socials = () => {
     );
 };
 
-const StyledSocialList = styled.ul``;
+const StyledSocialList = styled.ul`
+    display: flex;
+
+    li + li {
+        margin-left: 12px;
+    }
+`;
