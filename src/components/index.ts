@@ -6,7 +6,7 @@ export { Container } from './common/container';
 export { Icon } from './icon/icon';
 export { Logo } from './logo/logo';
 export { MainImageCard } from './mainImageCard/mainImageCard';
-export { Menu } from './menu/menu';
+export { HeaderMenu } from '../layout/header/headerMenu/headerMenu';
 export { Photo } from './photo/photo';
 export { PopularCard } from './popularCard/popularCard';
 export { SectionDescription } from './sectionDescription/sectionDescription';

@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
+import { theme } from '../../../styles/Theme';
 
-type LinkItem = {
+export type LinkItem = {
     linkTitle: string;
     linkUrl: string;
 };
 
 type Props = { links: LinkItem[] };
 
-export const Menu: FC<Props> = ({ links }) => {
+export const HeaderMenu: FC<Props> = ({ links }) => {
     return (
-        <StyledMenu>
+        <StyledHeaderMenu>
             <ul>
                 {links.map((link) => (
                     <li key={link.linkTitle}>
@@ -19,16 +19,14 @@ export const Menu: FC<Props> = ({ links }) => {
                     </li>
                 ))}
             </ul>
-        </StyledMenu>
+        </StyledHeaderMenu>
     );
 };
 
-const StyledMenu = styled.nav`
+const StyledHeaderMenu = styled.nav`
     ul {
         display: flex;
-        li + li {
-            margin-left: 40px;
-        }
+        gap: 40px;
 
         li a {
             position: relative;
@@ -56,5 +54,9 @@ const StyledMenu = styled.nav`
                 transform: scaleX(1);
             }
         }
+    }
+
+    @media ${theme.media.tablet} {
+        display: none;
     }
 `;

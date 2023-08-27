@@ -16,7 +16,7 @@ export const FlexWrapper = styled.div<Props>`
     flex-direction: ${(props) => props.direction || 'row'};
     align-items: ${(props) => props.align || 'stretch'};
     justify-content: ${(props) => props.justify || 'flex-start'};
-    flex-wrap: ${(props) => props.wrap || 'no-wrap'};
+    flex-wrap: ${(props) => props.wrap};
     margin: ${(props) => props.margin || '0'};
-    flex: ${(props) => props.flex};
+    // flex: ${(props) => props.flex};
 `;

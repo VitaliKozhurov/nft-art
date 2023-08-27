@@ -20,7 +20,7 @@ const StyledLogoLink = styled.a`
     align-items: center;
     h3 {
         position: absolute;
-        left: 36px;
+        left: 32px;
         bottom: -22px;
 
         font-family: Spectral, sans-serif;
@@ -30,6 +30,10 @@ const StyledLogoLink = styled.a`
         color: ${theme.colors.captionFont};
         span {
             color: ${theme.colors.accent};
+        }
+
+        @media ${theme.media.tablet} {
+            bottom: -6px;
         }
     }
 `;

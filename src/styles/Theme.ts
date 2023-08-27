@@ -9,4 +9,10 @@ export const theme = {
         headerLink: 'rgba(255, 255, 253, 0.72)',
         btnTextContained: '#090F1D',
     },
+    media: {
+        bigDesktop: 'screen and (max-width: 1200px)',
+        desktop: 'screen and (max-width: 992px)',
+        tablet: 'screen and (max-width: 768px)',
+        mobile: 'screen and (max-width: 576px)',
+    },
 };

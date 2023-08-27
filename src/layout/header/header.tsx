@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Container, FlexWrapper, Logo, Menu } from '../../components';
+import { Button, Container, FlexWrapper, Logo } from '../../components';
+import { HeaderMenu } from './headerMenu/headerMenu';
+import { theme } from '../../styles/Theme';
+import { MobileMenu } from './mobileMenu/mobileMenu';
 
 const links = [
     { linkTitle: 'Marketplace', linkUrl: '#' },
@@ -15,10 +18,9 @@ export const Header = () => {
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo />
-                    <Menu links={links} />
-                    <Button as={'a'} href={'#'} variant={'contained'}>
-                        Contact
-                    </Button>
+                    <HeaderMenu links={links} />
+                    <MobileMenu links={links} />
+                    <Button variant={'contained'}>Contact</Button>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -27,4 +29,15 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     padding: 28px 0;
+
+    @media ${theme.media.tablet} {
+        padding: 40px 0 0;
+    }
+    ${FlexWrapper} {
+        @media ${theme.media.desktop} {
+            & > button {
+                display: none;
+            }
+        }
+    }
 `;
