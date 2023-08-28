@@ -39,6 +39,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Spectral, sans-serif;
     line-height: 1.2;
   }
+  
+  h3{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 
   button {
     background-color: unset;

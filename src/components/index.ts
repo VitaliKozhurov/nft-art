@@ -1,5 +1,5 @@
 export { About } from './about/about';
-export { AmazingCard } from './amazingCard/amazingCard';
+export { AmazingCard } from '../layout/sections/amazing/amazingCard/amazingCard';
 export { Button } from './button/button';
 export { FlexWrapper } from './common/flexWrapper';
 export { Container } from './common/container';
