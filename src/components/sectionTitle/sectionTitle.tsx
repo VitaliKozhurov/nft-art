@@ -19,14 +19,9 @@ export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
 };
 
 const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2'; maxWidth: string }>`
-    font-family: Spectral, sans-serif;
     letter-spacing: -1px;
-    font-size: ${(props) => (props.tagName === 'h1' ? '64px' : '48px')};
     color: ${theme.colors.textFont};
     max-width: ${(props) => props.maxWidth};
-    font-weight: 500;
-    line-height: 1.2;
-    text-align: left;
 `;
 
 const StyledSpan = styled.span`

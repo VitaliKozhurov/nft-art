@@ -26,6 +26,20 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  h1 {
+    font-size: calc((100vw - 375px) / (1512 - 375) * (64 - 39) + 39px);
+    font-weight: 500;
+    font-family: Spectral, sans-serif;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: calc((100vw - 375px) / (1512 - 375) * (48 - 31) + 31px);
+    font-weight: 500;
+    font-family: Spectral, sans-serif;
+    line-height: 1.2;
+  }
+
   button {
     background-color: unset;
     border: none;

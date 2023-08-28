@@ -1,28 +1,27 @@
 import React from 'react';
-import { FlexWrapper } from '../common/flexWrapper';
-import { Button } from '../button/button';
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
+import { theme } from '../../../../styles/Theme';
+import { Button, FlexWrapper } from '../../../../components';
 
 export const MainImageCard = () => {
     return (
-        <StyledCardBox>
+        <CardBox>
             <FlexWrapper justify={'space-between'}>
-                <StyledCardItemInfo>
-                    <h4>Ends in</h4>
+                <CardItemInfo>
+                    <h5>Ends in</h5>
                     <span>05:45:47</span>
-                </StyledCardItemInfo>
-                <StyledCardItemInfo>
-                    <h4>Current bid</h4>
+                </CardItemInfo>
+                <CardItemInfo>
+                    <h5>Current bid</h5>
                     <span>0.24ETH</span>
-                </StyledCardItemInfo>
+                </CardItemInfo>
             </FlexWrapper>
             <Button variant={'outlined'}>Place A Bid</Button>
-        </StyledCardBox>
+        </CardBox>
     );
 };
 
-const StyledCardBox = styled.div`
+const CardBox = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
@@ -35,12 +34,16 @@ const StyledCardBox = styled.div`
     border-radius: 16px;
     border-top: 1px solid ${theme.colors.accent};
     box-shadow: 0 9px 50px 0 rgba(23, 36, 65, 0.04);
+
+    @media ${theme.media.mobile} {
+        max-width: 224px;
+    }
 `;
 
-const StyledCardItemInfo = styled.div`
-    font-size: 1rem;
+const CardItemInfo = styled.div`
+    font-size: 16px;
     margin-bottom: 24px;
-    h4 {
+    h5 {
         color: ${theme.colors.accent};
         font-weight: 400;
         line-height: 1.6;
@@ -49,5 +52,9 @@ const StyledCardItemInfo = styled.div`
     span {
         font-weight: 700;
         line-height: 1.2;
+    }
+    @media ${theme.media.tablet} {
+        font-size: 16px;
+        margin-bottom: 16px;
     }
 `;

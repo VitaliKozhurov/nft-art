@@ -1,88 +1,119 @@
 import React from 'react';
-import { SectionTitle, TitleTextType } from '../../../components/sectionTitle/sectionTitle';
-import { Button, Container, MainImageCard, Photo, SectionDescription, StatisticItem } from '../../../components';
+import { Button, Container, Photo, SectionDescription, SectionTitle } from '../../../components';
+import { StatisticItem } from './statisticItem/statisticItem';
+import { MainImageCard } from './mainImageCard/mainImageCard';
 import styled from 'styled-components';
-import { theme } from '../../../styles/Theme';
 import mainPhoto from '../../../assets/images/main_section/main.webp';
-
-const mainTitle: TitleTextType[] = [
-    { text: ' Discover and Collect The Best NFTs', type: 'primary' },
-    { text: ' Digital Art.', type: 'accent' },
-];
-const mainDescription =
-    'Get started with the easiest and most secure platform to buy and trade digital ART and NFT’s.\n' +
-    '                        Start exploring the world of digital art and NFTs today and take control of your digital assets\n' +
-    '                        with confidence!';
-const mainStatistics = [
-    { count: 8.9, title: 'Art work' },
-    { count: 65, title: 'Artist' },
-    { count: 87, title: 'Collection' },
-];
+import { theme } from '../../../styles/Theme';
+import { mainDescription, mainStatistics, mainTitle } from './mainSectionData';
 
 export const Main = () => {
     return (
         <Container>
-            <StyledMain>
-                <StyledMainInfo>
+            <MainSection>
+                <MainContent>
                     <SectionTitle tagName={'h1'} title={mainTitle} />
                     <SectionDescription>{mainDescription}</SectionDescription>
-                    <StyledButtonsBlock>
+                    <ButtonsContainer>
                         <Button variant={'contained'}>Explore Now</Button>
                         <Button variant={'link'}>Learn More</Button>
-                    </StyledButtonsBlock>
-                </StyledMainInfo>
-                <StyledListStatistics>
+                    </ButtonsContainer>
+                </MainContent>
+
+                <MainStatistics>
                     {mainStatistics.map((item) => (
                         <StatisticItem key={item.title} title={item.title} count={item.count} />
                     ))}
-                </StyledListStatistics>
+                </MainStatistics>
 
-                <StyledMainImage>
-                    <StyledPhotoWrapper>
-                        <Photo src={mainPhoto} alt={'Main section photo'} />
-                    </StyledPhotoWrapper>
-
+                <MainImage>
+                    <PhotoWrapper>
+                        <Photo src={mainPhoto} alt={'Main section photo'} ratio={'17 / 20'} />
+                    </PhotoWrapper>
                     <MainImageCard />
-                </StyledMainImage>
-            </StyledMain>
+                </MainImage>
+            </MainSection>
         </Container>
     );
 };
 
-const StyledMain = styled.main`
+const MainSection = styled.main`
     padding: 92px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 170px;
-    grid-template-areas: 'info image' 'statistics image';
+    grid-template-areas: 'content image' 'statistics image';
+
+    @media ${theme.media.bigDesktop} {
+        column-gap: 100px;
+    }
+
+    @media ${theme.media.desktop} {
+        column-gap: 25px;
+    }
+
+    @media ${theme.media.tablet} {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'content' 'image' 'statistics';
+        padding: 60px 0 40px;
+    }
 `;
-const StyledMainInfo = styled.div`
-    grid-area: info;
+const MainContent = styled.div`
+    grid-area: content;
     padding-top: 26px;
+
+    @media ${theme.media.tablet} {
+        padding-top: 0;
+        text-align: center;
+    }
 `;
-const StyledMainImage = styled.div`
-    position: relative;
-    grid-area: image;
-    display: flex;
-    justify-content: center;
-`;
-const StyledButtonsBlock = styled.div`
-    margin-bottom: 72px;
-`;
-const StyledListStatistics = styled.ul`
+
+const MainStatistics = styled.ul`
     grid-area: statistics;
     padding-bottom: 26px;
     display: flex;
 
-    li + li {
-        padding-left: 94px;
-        border-left: 1px solid ${theme.colors.accent};
+    @media ${theme.media.tablet} {
+        justify-content: center;
     }
 `;
-const StyledPhotoWrapper = styled.div`
-    max-width: 465px;
-    width: 100%;
-    max-height: 545px;
+const MainImage = styled.div`
+    grid-area: image;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 96px;
+
+    @media ${theme.media.tablet} {
+        margin-bottom: 54px;
+        padding-bottom: 76px;
+    }
+
+    @media ${theme.media.mobile} {
+        margin-bottom: 32px;
+    }
+`;
+
+const PhotoWrapper = styled.div`
+    width: 83%;
     border-radius: 24px;
     overflow: hidden;
+
+    @media ${theme.media.mobile} {
+        width: 90%;
+    }
+`;
+
+const ButtonsContainer = styled.div`
+    margin-bottom: 72px;
+    button:first-child {
+        margin-right: 36px;
+    }
+    @media ${theme.media.tablet} {
+        margin-bottom: 54px;
+    }
+
+    @media ${theme.media.mobile} {
+        margin-bottom: 48px;
+    }
 `;

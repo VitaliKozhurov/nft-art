@@ -49,6 +49,7 @@ const StyledButton = styled.button<Props>`
         props.variant === 'link' &&
         css<Props>`
             background-color: transparent;
+            padding: 0;
             border: none;
             color: ${theme.colors.textFont};
         `}
