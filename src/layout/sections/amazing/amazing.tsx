@@ -11,7 +11,7 @@ export const Amazing = () => {
             <Container>
                 <AmazingGridContainer>
                     <HeaderGridItem>
-                        <SectionTitle tagName={'h2'} title={amazingSectionTitle} maxWidth={'518px'} />
+                        <SectionTitle tagName={'h2'} title={amazingSectionTitle} />
                     </HeaderGridItem>
                     <ButtonGridItem>
                         <Button variant={'contained'}>See All</Button>
@@ -30,16 +30,25 @@ export const Amazing = () => {
 const AmazingGridContainer = styled.div`
     display: grid;
     grid-template-areas: 'header button' 'cards cards';
+
+    @media ${theme.media.bigMobile} {
+        grid-template-areas: 'header' 'cards' 'button';
+    }
 `;
 
 const HeaderGridItem = styled.div`
     grid-area: header;
+    max-width: 518px;
 `;
 
 const ButtonGridItem = styled.div`
     grid-area: button;
     justify-self: right;
     align-self: end;
+
+    @media ${theme.media.bigMobile} {
+        justify-self: center;
+    }
 `;
 
 const CardsGridItem = styled.div`
@@ -52,5 +61,14 @@ const CardsGridItem = styled.div`
 
     @media ${theme.media.bigDesktop} {
         flex-wrap: wrap;
+    }
+
+    @media ${theme.media.tablet} {
+        gap: 24px;
+        margin: 32px 0;
+    }
+
+    @media ${theme.media.bigMobile} {
+        gap: 16px;
     }
 `;

@@ -38,6 +38,10 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     font-family: Spectral, sans-serif;
     line-height: 1.2;
+
+    @media ${theme.media.bigMobile} {
+      text-align: center;
+    }
   }
   
   h3{

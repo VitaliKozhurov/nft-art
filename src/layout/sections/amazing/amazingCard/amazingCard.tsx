@@ -49,15 +49,17 @@ const Card = styled.div`
     background: ${theme.colors.cardBg};
 
     @media ${theme.media.bigDesktop} {
-        & {
-            max-width: 40%;
-        }
+        flex: 0 1 40%;
     }
-
     @media ${theme.media.desktop} {
-        & {
-            max-width: 50%;
-        }
+        flex: 0 1 45%;
+    }
+    @media ${theme.media.tablet} {
+        flex: 0 1 70%;
+    }
+    @media ${theme.media.bigMobile} {
+        flex: 0 1 100%;
+        padding: 16px;
     }
 `;
 
