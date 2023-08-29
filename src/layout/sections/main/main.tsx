@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Photo, SectionDescription, SectionTitle } from '../../../components';
+import { Button, ButtonsContainer, Container, Photo, SectionDescription, SectionTitle } from '../../../components';
 import { StatisticItem } from './statisticItem/statisticItem';
 import { MainImageCard } from './mainImageCard/mainImageCard';
 import styled from 'styled-components';
@@ -104,16 +104,16 @@ const PhotoWrapper = styled.div`
     }
 `;
 
-const ButtonsContainer = styled.div`
-    margin-bottom: 72px;
-    button:first-child {
-        margin-right: 36px;
-    }
-    @media ${theme.media.tablet} {
-        margin-bottom: 54px;
-    }
-
-    @media ${theme.media.mobile} {
-        margin-bottom: 48px;
-    }
-`;
+// const ButtonsContainer = styled.div`
+//     margin-bottom: 72px;
+//     button:first-child {
+//         margin-right: 36px;
+//     }
+//     @media ${theme.media.tablet} {
+//         margin-bottom: 54px;
+//     }
+//
+//     @media ${theme.media.mobile} {
+//         margin-bottom: 48px;
+//     }
+// `;

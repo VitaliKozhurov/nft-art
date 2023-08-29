@@ -14,3 +14,4 @@ export { SectionTitle } from './sectionTitle/sectionTitle';
 export { Socials } from './socials/socials';
 export { StatisticItem } from '../layout/sections/main/statisticItem/statisticItem';
 export { StyledSection } from './section/section';
+export { ButtonsContainer } from './buttonsContainer/buttonsContainer';
