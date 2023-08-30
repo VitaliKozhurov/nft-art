@@ -1,5 +1,13 @@
 import React from 'react';
-import { Button, Container, SectionTitle, StyledSection } from '../../../components';
+import {
+    Button,
+    ButtonGridItem,
+    Container,
+    GridSectionContainer,
+    HeaderGridItem,
+    SectionTitle,
+    StyledSection,
+} from '../../../components';
 import { AmazingCard } from './amazingCard/amazingCard';
 import { amazingCardsData, amazingSectionTitle } from './amazingSectionData';
 import styled from 'styled-components';
@@ -9,11 +17,11 @@ export const Amazing = () => {
     return (
         <StyledSection>
             <Container>
-                <AmazingGridContainer>
-                    <HeaderGridItem>
+                <GridSectionContainer>
+                    <HeaderGridItem maxWidth={'518px'}>
                         <SectionTitle tagName={'h2'} title={amazingSectionTitle} />
                     </HeaderGridItem>
-                    <ButtonGridItem>
+                    <ButtonGridItem align={'end'}>
                         <Button variant={'contained'}>See All</Button>
                     </ButtonGridItem>
                     <CardsGridItem>
@@ -21,35 +29,11 @@ export const Amazing = () => {
                             <AmazingCard {...card} />
                         ))}
                     </CardsGridItem>
-                </AmazingGridContainer>
+                </GridSectionContainer>
             </Container>
         </StyledSection>
     );
 };
-
-const AmazingGridContainer = styled.div`
-    display: grid;
-    grid-template-areas: 'header button' 'cards cards';
-
-    @media ${theme.media.bigMobile} {
-        grid-template-areas: 'header' 'cards' 'button';
-    }
-`;
-
-const HeaderGridItem = styled.div`
-    grid-area: header;
-    max-width: 518px;
-`;
-
-const ButtonGridItem = styled.div`
-    grid-area: button;
-    justify-self: right;
-    align-self: end;
-
-    @media ${theme.media.bigMobile} {
-        justify-self: center;
-    }
-`;
 
 const CardsGridItem = styled.div`
     grid-area: cards;

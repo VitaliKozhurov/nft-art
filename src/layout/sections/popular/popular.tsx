@@ -1,8 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { cardsData } from './cardsData';
-import { Button, Container, FlexWrapper, PopularCard, SectionTitle, StyledSection } from '../../../components';
+import {
+    Button,
+    ButtonGridItem,
+    Container,
+    GridSectionContainer,
+    HeaderGridItem,
+    PopularCard,
+    SectionTitle,
+    StyledSection,
+} from '../../../components';
 import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
+import { theme } from '../../../styles/Theme';
 
 const popularTitle: TitleTextType[] = [
     { text: 'Popular ', type: 'primary' },
@@ -14,24 +24,47 @@ export const Popular = () => {
     return (
         <StyledSection>
             <Container>
-                <FlexWrapper justify={'space-between'} align={'center'}>
-                    <SectionTitle tagName={'h2'} title={popularTitle} maxWidth={'314px'} />
-                    <Button variant={'contained'}>See All</Button>
-                </FlexWrapper>
-                <StyledGridContainer>
-                    {cardsData.map((card) => (
-                        <PopularCard {...card} />
-                    ))}
-                </StyledGridContainer>
+                <GridSectionContainer>
+                    <HeaderGridItem maxWidth={'320px'}>
+                        <SectionTitle tagName={'h2'} title={popularTitle} />
+                    </HeaderGridItem>
+                    <ButtonGridItem>
+                        <Button variant={'contained'}>See All</Button>
+                    </ButtonGridItem>
+                    <CardsGridItem>
+                        <CardsGridContainer>
+                            {cardsData.map((card) => (
+                                <PopularCard {...card} />
+                            ))}
+                        </CardsGridContainer>
+                    </CardsGridItem>
+                </GridSectionContainer>
             </Container>
         </StyledSection>
     );
 };
 
-const StyledGridContainer = styled.div`
+const CardsGridItem = styled.div`
+    grid-area: cards;
+    margin-top: 64px;
+
+    @media ${theme.media.tablet} {
+        margin: 32px 0;
+    }
+`;
+
+const CardsGridContainer = styled.div`
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 310px);
-    margin-top: 64px;
+    @media ${theme.media.tablet} {
+        grid-template-rows: repeat(3, 310px);
+    }
+
+    @media ${theme.media.bigMobile} {
+        gap: 16px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 356px);
+    }
 `;
