@@ -11,6 +11,8 @@ export const HeaderGridItem = styled.div<Props>`
     margin-right: 15px;
     @media ${theme.media.tablet} {
         max-width: 100%;
+    }
+    @media ${theme.media.bigMobile} {
         margin: 0;
     }
 `;

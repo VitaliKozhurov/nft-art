@@ -1,31 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { cardsData } from './cardsData';
 import {
     Button,
     ButtonGridItem,
     Container,
     GridSectionContainer,
     HeaderGridItem,
-    PopularCard,
     SectionTitle,
     StyledSection,
 } from '../../../components';
-import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
 import { theme } from '../../../styles/Theme';
-
-const popularTitle: TitleTextType[] = [
-    { text: 'Popular ', type: 'primary' },
-    { text: 'Artists ', type: 'accent' },
-    { text: 'On This Week', type: 'primary' },
-];
+import { PopularCard } from './popularCard/popularCard';
+import { cardsData, popularTitle } from './popularSectionData';
 
 export const Popular = () => {
     return (
         <StyledSection>
             <Container>
                 <GridSectionContainer>
-                    <HeaderGridItem maxWidth={'320px'}>
+                    <HeaderGridItem maxWidth={'360px'}>
                         <SectionTitle tagName={'h2'} title={popularTitle} />
                     </HeaderGridItem>
                     <ButtonGridItem>

@@ -8,7 +8,7 @@ export { Logo } from './logo/logo';
 export { MainImageCard } from '../layout/sections/main/mainImageCard/mainImageCard';
 export { HeaderMenu } from '../layout/header/headerMenu/headerMenu';
 export { Photo } from './photo/photo';
-export { PopularCard } from './popularCard/popularCard';
+export { PopularCard } from '../layout/sections/popular/popularCard/popularCard';
 export { SectionDescription } from './sectionDescription/sectionDescription';
 export { SectionTitle } from './sectionTitle/sectionTitle';
 export { Socials } from './socials/socials';

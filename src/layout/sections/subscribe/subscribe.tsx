@@ -12,88 +12,126 @@ import {
     SectionTitle,
     StyledSection,
 } from '../../../components';
-import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
 import { theme } from '../../../styles/Theme';
-
-const subscribeSectionTitle: TitleTextType[] = [
-    { text: 'Subscribe And ', type: 'primary' },
-    { text: 'get our Updates ', type: 'accent' },
-    { text: 'Every Week', type: 'primary' },
-];
+import { subscribeSectionDescription, subscribeSectionTitle } from './subscribeSectionData';
 
 export const Subscribe = () => {
     return (
         <StyledSection>
             <Container>
-                <FlexWrapper gap={'30px'} justify={'space-between'}>
+                <SubscribeFlexContainer>
                     <SubscribeCardsBody>
                         <SubscribeCard
-                            height={'376px'}
                             right={'154px'}
                             bottom={'10px'}
-                            width={'410px'}
                             transform={'rotate(-11deg)'}
                             origin={'left bottom'}
                         >
                             <Photo src={cardFrontSide} alt={'Subscribe card photo'} />
                         </SubscribeCard>
-                        <SubscribeCard height={'348px'} right={'0'} bottom={'0'} width={'282px'}>
+                        <SubscribeCard right={'0'} bottom={'0'}>
                             <Photo src={cardBackSide} alt={'Subscribe card photo'} />
                         </SubscribeCard>
                     </SubscribeCardsBody>
-                    <SubscribeContainer>
+
+                    <SubscribeSectionContent>
                         <FlexWrapper direction={'column'}>
                             <SectionTitle tagName={'h2'} title={subscribeSectionTitle} />
-                            <SectionDescription>
-                                We have a blog related to NFT so we can share thoughts and routines on our blog which is
-                                updated weekly
-                            </SectionDescription>
+                            <SectionDescription>{subscribeSectionDescription}</SectionDescription>
                             <InputBox>
-                                <StyledInput type="text" placeholder={'Enter your e-mail'} />
+                                <Input type="text" placeholder={'Enter your e-mail'} />
                                 <Button variant={'contained'}>Subscribe</Button>
                             </InputBox>
                         </FlexWrapper>
-                    </SubscribeContainer>
-                </FlexWrapper>
+                    </SubscribeSectionContent>
+                </SubscribeFlexContainer>
             </Container>
         </StyledSection>
     );
 };
 
-const SubscribeContainer = styled.div`
+const SubscribeFlexContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media ${theme.media.tablet} {
+        flex-direction: column;
+        gap: 0;
+    }
+`;
+
+const SubscribeSectionContent = styled.div`
     max-width: 520px;
     width: 100%;
-    padding: 178px 0;
+    padding: 90px 0;
+
+    @media ${theme.media.bigDesktop} {
+        max-width: 420px;
+    }
+
+    @media ${theme.media.desktop} {
+        max-width: 380px;
+        padding: 60px 0;
+    }
+
+    @media ${theme.media.tablet} {
+        padding: 0;
+        text-align: center;
+        order: 1;
+        margin: 0 auto 48px;
+    }
 `;
 
 const SubscribeCardsBody = styled.div`
     position: relative;
-    max-width: 630px;
     width: 100%;
+
+    @media ${theme.media.tablet} {
+        min-height: 420px;
+        order: 2;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    @media ${theme.media.bigMobile} {
+        width: 100%;
+        min-height: 290px;
+    }
 `;
 
 const InputBox = styled.div`
     display: flex;
+    flex-direction: column;
     border-radius: 8px;
     background: ${theme.colors.cardBg};
-    padding: 4px 4px 4px 24px;
+    padding: 16px 156px 16px 24px;
+    position: relative;
+
+    button {
+        position: absolute;
+        top: 50%;
+        right: 4px;
+        transform: translateY(-50%);
+    }
+
+    @media ${theme.media.tablet} {
+        & button {
+            top: unset;
+            right: unset;
+            left: 50%;
+            bottom: -76px;
+            transform: translate(-50%, 0%);
+        }
+    }
 `;
 
-const StyledInput = styled.input`
-    flex: 1 1 auto;
-    background: transparent;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    border: none;
-    outline: none;
+const Input = styled.input`
     color: ${theme.colors.textFont};
     margin-right: 10px;
 `;
 
 type SubscribeCardProps = {
-    width?: string;
-    height?: string;
     left?: string;
     top?: string;
     right?: string;
@@ -104,9 +142,7 @@ type SubscribeCardProps = {
 
 const SubscribeCard = styled.div<SubscribeCardProps>`
     position: absolute;
-    max-width: ${(props) => props.width};
     width: 100%;
-    height: ${(props) => props.height || '100%'};
     border-radius: 24px;
     overflow: hidden;
     top: ${(props) => props.top};
@@ -115,4 +151,45 @@ const SubscribeCard = styled.div<SubscribeCardProps>`
     right: ${(props) => props.right};
     transform: ${(props) => props.transform};
     transform-origin: ${(props) => props.origin};
+
+    &:first-child {
+        width: 60%;
+        height: 376px;
+    }
+
+    &:last-child {
+        width: 45%;
+        height: 348px;
+    }
+
+    @media ${theme.media.bigDesktop} {
+        &:first-child {
+            height: 306px;
+        }
+
+        &:last-child {
+            height: 278px;
+        }
+    }
+
+    @media ${theme.media.desktop} {
+        &:first-child {
+            height: 266px;
+            right: 90px;
+        }
+        &:last-child {
+            height: 238px;
+        }
+    }
+
+    @media ${theme.media.bigMobile} {
+        &:first-child {
+            height: 190px;
+            width: 70%;
+        }
+        &:last-child {
+            height: 200px;
+            width: 60%;
+        }
+    }
 `;

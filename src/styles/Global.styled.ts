@@ -54,4 +54,14 @@ export const GlobalStyle = createGlobalStyle`
     background-color: unset;
     border: none;
   }
+  
+  input{
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    border: none;
+    outline: none;
+  }
+  
 `;

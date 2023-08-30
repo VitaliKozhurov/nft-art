@@ -103,17 +103,3 @@ const PhotoWrapper = styled.div`
         width: 90%;
     }
 `;
-
-// const ButtonsContainer = styled.div`
-//     margin-bottom: 72px;
-//     button:first-child {
-//         margin-right: 36px;
-//     }
-//     @media ${theme.media.tablet} {
-//         margin-bottom: 54px;
-//     }
-//
-//     @media ${theme.media.mobile} {
-//         margin-bottom: 48px;
-//     }
-// `;

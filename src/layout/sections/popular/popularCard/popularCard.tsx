@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { CardAvatar } from './cardAvatar/cardAvatar';
-import { theme } from '../../styles/Theme';
+import { theme } from '../../../../styles/Theme';
 
 type Props = {
     imageUrl: string;
@@ -25,7 +25,7 @@ const CardImage = styled.div<{ imageUrl: string }>`
     position: relative;
     background:
         linear-gradient(2deg, rgba(19, 30, 58, 0.92) 0%, rgba(19, 30, 58, 0) 70.62%),
-        url(${(props) => props.imageUrl}) no-repeat center / cover,
+        url(${(props) => props.imageUrl}) no-repeat top / cover,
         lightgray 0px -29.153px / 100% 167.203% no-repeat;
 
     &:nth-child(1) {

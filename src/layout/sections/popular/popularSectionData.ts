@@ -8,6 +8,7 @@ import sebastian from '../../../assets/images/popular_section/popular_sebastian.
 import sebastianIcon from '../../../assets/images/avatars/sebastian.webp';
 import abraham from '../../../assets/images/popular_section/popular_abraham.webp';
 import abrahamIcon from '../../../assets/images/avatars/abraham.webp';
+import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
 
 export const cardsData = [
     {
@@ -35,4 +36,10 @@ export const cardsData = [
         avatarUrl: abrahamIcon,
         ownerName: 'Abraham Zack',
     },
+];
+
+export const popularTitle: TitleTextType[] = [
+    { text: 'Popular ', type: 'primary' },
+    { text: 'Artists ', type: 'accent' },
+    { text: 'On This Week', type: 'primary' },
 ];
