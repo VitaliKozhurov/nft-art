@@ -70,10 +70,6 @@ const StyledContactsInfo = styled.div`
     }
     @media ${theme.media.tablet} {
         padding-bottom: 0;
-    }
-
-    @media ${theme.media.tablet} {
-        align-items: center;
         flex-direction: column;
     }
 `;

@@ -39,7 +39,13 @@ const StyledAbout = styled.div`
         }
     }
 
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tablet} {
+        & {
+            flex: 0 1 25%;
+        }
+    }
+
+    @media ${theme.media.bigMobile} {
         & {
             flex: 0 1 100%;
         }
