@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
+import { theme } from '../../../styles/Theme';
 
 type LinkProps = { linkUrl: string; linkTitle: string };
 
@@ -27,6 +27,22 @@ export const About: FC<Props> = ({ title, links }) => {
 const StyledAbout = styled.div`
     &:not(:last-child) {
         margin-right: 94px;
+    }
+
+    @media ${theme.media.desktop} {
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+        & {
+            flex: 0 1 50%;
+            margin-bottom: 32px;
+        }
+    }
+
+    @media ${theme.media.mobile} {
+        & {
+            flex: 0 1 100%;
+        }
     }
 `;
 const StyledAboutTitle = styled.h4`

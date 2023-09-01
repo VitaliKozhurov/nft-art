@@ -1,4 +1,4 @@
-export { About } from './about/about';
+export { About } from '../layout/footer/about/about';
 export { AmazingCard } from '../layout/sections/amazing/amazingCard/amazingCard';
 export { Button } from './button/button';
 export { FlexWrapper } from './common/flexWrapper';
@@ -11,7 +11,7 @@ export { Photo } from './photo/photo';
 export { PopularCard } from '../layout/sections/popular/popularCard/popularCard';
 export { SectionDescription } from './sectionDescription/sectionDescription';
 export { SectionTitle } from './sectionTitle/sectionTitle';
-export { Socials } from './socials/socials';
+export { Socials } from '../layout/footer/socials/socials';
 export { StatisticItem } from '../layout/sections/main/statisticItem/statisticItem';
 export { StyledSection } from './section/section';
 export { ButtonsContainer } from './buttonsContainer/buttonsContainer';

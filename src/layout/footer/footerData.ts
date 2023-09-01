@@ -1,4 +1,7 @@
-export const footerLinksData = [
+export const footerDescription =
+    'Discover NFTs by category, track the latest drop, and and follow the collections you love. Enjoy it!';
+
+export const footerData = [
     {
         title: 'Explore',
         links: [

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '../icon/icon';
+import { Icon } from '../../../components';
 import styled from 'styled-components';
 
 const socialsData = [
