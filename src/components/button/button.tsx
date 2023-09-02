@@ -35,14 +35,31 @@ const StyledButton = styled.button<Props>`
         css<Props>`
             background-color: ${theme.colors.accent};
             color: ${theme.colors.btnTextContained};
+            transition: all 150ms ease-in-out;
+
+            &:hover {
+                background-color: transparent;
+                color: #fff;
+                box-shadow:
+                    0 0 3px 0 ${theme.colors.accent} inset,
+                    0 0 3px 2px ${theme.colors.accent};
+            }
         `}
 
     ${(props) =>
         props.variant === 'outlined' &&
         css<Props>`
-            background-color: transparent;
             border: solid 1px ${theme.colors.accent};
             color: ${theme.colors.accent};
+            background-image: linear-gradient(45deg, ${theme.colors.accent} 50%, transparent 50%);
+            background-position: 100%;
+            background-size: 400%;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-position: 0;
+                color: ${theme.colors.cardBg};
+            }
         `}
 
   ${(props) =>
@@ -52,5 +69,23 @@ const StyledButton = styled.button<Props>`
             padding: 0;
             border: none;
             color: ${theme.colors.textFont};
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                background: ${theme.colors.accent};
+                left: 45%;
+                height: 2px;
+                bottom: -5px;
+                transition: all 0.3s;
+                opacity: 0.7;
+            }
+
+            &:hover::before {
+                width: 110%;
+                left: -5%;
+            }
         `}
 `;

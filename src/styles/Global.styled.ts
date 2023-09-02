@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  html,body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -16,6 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: ${theme.colors.primaryBg};
     color: ${theme.colors.textFont};
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   a {
@@ -43,8 +46,8 @@ export const GlobalStyle = createGlobalStyle`
       text-align: center;
     }
   }
-  
-  h3{
+
+  h3 {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
@@ -54,8 +57,8 @@ export const GlobalStyle = createGlobalStyle`
     background-color: unset;
     border: none;
   }
-  
-  input{
+
+  input {
     background: transparent;
     font-size: 16px;
     font-weight: 400;
@@ -63,5 +66,5 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
   }
-  
+
 `;
