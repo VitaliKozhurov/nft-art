@@ -17,7 +17,7 @@ import { subscribeSectionDescription, subscribeSectionTitle } from './subscribeS
 
 export const Subscribe = () => {
     return (
-        <StyledSection>
+        <StyledSection id={'community'}>
             <Container>
                 <SubscribeFlexContainer>
                     <SubscribeCardsBody>

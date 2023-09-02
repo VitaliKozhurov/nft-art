@@ -15,10 +15,10 @@ import { theme } from '../../../styles/Theme';
 
 export const Amazing = () => {
     return (
-        <StyledSection>
+        <StyledSection id={'marketplace'}>
             <Container>
                 <GridSectionContainer>
-                    <HeaderGridItem maxWidth={'518px'}>
+                    <HeaderGridItem $maxWidth={'518px'}>
                         <SectionTitle tagName={'h2'} title={amazingSectionTitle} />
                     </HeaderGridItem>
                     <ButtonGridItem align={'end'}>
@@ -26,7 +26,7 @@ export const Amazing = () => {
                     </ButtonGridItem>
                     <CardsGridItem>
                         {amazingCardsData.map((card) => (
-                            <AmazingCard {...card} />
+                            <AmazingCard key={card.cardTitle} {...card} />
                         ))}
                     </CardsGridItem>
                 </GridSectionContainer>

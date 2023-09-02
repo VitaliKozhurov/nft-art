@@ -21,7 +21,7 @@ export const Footer = () => {
                     </ContactBox>
                     <FlexWrapper>
                         {footerData.map((item) => (
-                            <About title={item.title} links={item.links} />
+                            <About key={item.title} title={item.title} links={item.links} />
                         ))}
                     </FlexWrapper>
                 </StyledContactsInfo>

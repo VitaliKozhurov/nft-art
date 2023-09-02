@@ -63,12 +63,30 @@ const StyledAboutList = styled.ul`
         font-size: 16px;
         font-weight: 400;
         line-height: 1.6;
+
         &:not(:last-child) {
             margin-bottom: 8px;
         }
 
         a {
             color: ${theme.colors.textFont};
+            position: relative;
+        }
+
+        & a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            background: ${theme.colors.accent};
+            left: 0;
+            height: 2px;
+            bottom: -5px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        & a:hover::before {
+            width: 110%;
         }
     }
 `;

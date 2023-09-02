@@ -16,7 +16,7 @@ import { bestDescription, bestSectionTitle } from './bestNFTSectionData';
 
 export const BestNft = () => {
     return (
-        <StyledSection>
+        <StyledSection id={'collections'}>
             <Container>
                 <BestFlexContainer>
                     <BestSectionContent>

@@ -15,10 +15,10 @@ import { cardsData, popularTitle } from './popularSectionData';
 
 export const Popular = () => {
     return (
-        <StyledSection>
+        <StyledSection id={'artists'}>
             <Container>
                 <GridSectionContainer>
-                    <HeaderGridItem maxWidth={'360px'}>
+                    <HeaderGridItem $maxWidth={'360px'}>
                         <SectionTitle tagName={'h2'} title={popularTitle} />
                     </HeaderGridItem>
                     <ButtonGridItem>
@@ -27,7 +27,7 @@ export const Popular = () => {
                     <CardsGridItem>
                         <CardsGridContainer>
                             {cardsData.map((card) => (
-                                <PopularCard {...card} />
+                                <PopularCard key={card.ownerName} {...card} />
                             ))}
                         </CardsGridContainer>
                     </CardsGridItem>

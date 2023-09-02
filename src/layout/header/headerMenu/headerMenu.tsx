@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
+
 import { theme } from '../../../styles/Theme';
 
 export type LinkItem = {
@@ -15,7 +17,9 @@ export const HeaderMenu: FC<Props> = ({ links }) => {
             <ul>
                 {links.map((link) => (
                     <li key={link.linkTitle}>
-                        <a href={link.linkUrl}>{link.linkTitle}</a>
+                        <Link href={link.linkUrl} smooth={true} to={link.linkTitle.toLowerCase()}>
+                            {link.linkTitle}
+                        </Link>
                     </li>
                 ))}
             </ul>

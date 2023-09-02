@@ -11,13 +11,13 @@ type Props = {
 
 export const PopularCard: FC<Props> = ({ imageUrl, avatarUrl, ownerName }) => {
     return (
-        <CardImage imageUrl={imageUrl}>
+        <CardImage $imageUrl={imageUrl}>
             <CardAvatar avatarUrl={avatarUrl} ownerName={ownerName} />
         </CardImage>
     );
 };
 
-const CardImage = styled.div<{ imageUrl: string }>`
+const CardImage = styled.div<{ $imageUrl: string }>`
     max-width: 100%;
     height: 100%;
     border-radius: 16px;
@@ -25,7 +25,7 @@ const CardImage = styled.div<{ imageUrl: string }>`
     position: relative;
     background:
         linear-gradient(2deg, rgba(19, 30, 58, 0.92) 0%, rgba(19, 30, 58, 0) 70.62%),
-        url(${(props) => props.imageUrl}) no-repeat top / cover,
+        url(${(props) => props.$imageUrl}) no-repeat top / cover,
         lightgray 0px -29.153px / 100% 167.203% no-repeat;
 
     &:nth-child(1) {

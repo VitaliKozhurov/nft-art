@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './Theme';
-
+import bg from '../assets/images/bg.webp';
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     margin: 0;
@@ -14,11 +14,16 @@ export const GlobalStyle = createGlobalStyle`
     'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${theme.colors.primaryBg};
     color: ${theme.colors.textFont};
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    background-image: linear-gradient(${theme.colors.primaryBg} 0%,${theme.colors.primaryBg} 100%), url("${bg}");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+    
   }
 
   a {

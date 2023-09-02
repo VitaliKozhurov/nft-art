@@ -12,16 +12,16 @@ type Props = {
 
 export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
     return (
-        <StyledSectionTitle as={tagName} maxWidth={maxWidth || '100%'} tagName={tagName}>
-            {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan>{el.text}</StyledSpan>))}
+        <StyledSectionTitle as={tagName} $maxWidth={maxWidth || '100%'} $tagName={tagName}>
+            {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan key={el.text}>{el.text}</StyledSpan>))}
         </StyledSectionTitle>
     );
 };
 
-const StyledSectionTitle = styled.h1<{ tagName: 'h1' | 'h2'; maxWidth: string }>`
+const StyledSectionTitle = styled.h1<{ $tagName: 'h1' | 'h2'; $maxWidth: string }>`
     letter-spacing: -1px;
     color: ${theme.colors.textFont};
-    max-width: ${(props) => props.maxWidth};
+    max-width: ${(props) => props.$maxWidth};
 `;
 
 const StyledSpan = styled.span`
