@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from '../../../components';
 import styled from 'styled-components';
+import { theme } from '../../../styles/Theme';
 
 const socialsData = [
     { id: 'facebook', url: 'https://www.facebook.com/' },
@@ -28,5 +29,8 @@ const StyledSocialList = styled.ul`
 
     li + li {
         margin-left: 12px;
+    }
+    li:hover svg {
+        color: ${theme.colors.accent};
     }
 `;
