@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import mainPhoto from '../../../assets/images/main_section/main.webp';
 import { theme } from '../../../styles/Theme';
 import { mainDescription, mainStatistics, mainTitle } from './mainSectionData';
+import { CircleElement } from '../../../components/circleElement/circleElement';
 
 export const Main = () => {
     return (
@@ -30,6 +31,7 @@ export const Main = () => {
                     <PhotoWrapper>
                         <Photo src={mainPhoto} alt={'Main section photo'} ratio={'17 / 20'} />
                     </PhotoWrapper>
+                    <CircleElement />
                     <MainImageCard />
                 </MainImage>
             </MainSection>

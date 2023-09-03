@@ -49,6 +49,7 @@ const StyledButton = styled.button<Props>`
         css<Props>`
             color: ${theme.colors.accent};
             background-image: linear-gradient(45deg, ${theme.colors.accent} 50%, transparent 50%);
+            border: solid 2px ${theme.colors.accent};
             background-position: 100%;
             background-size: 400%;
             transition: all 0.5s ease-in-out;
