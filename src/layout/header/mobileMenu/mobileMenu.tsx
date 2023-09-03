@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/Theme';
 import { LinkItem } from '../headerMenu/headerMenu';
+import { Link } from 'react-scroll';
+import { MenuItem } from '../navLink/navLink';
 
 type Props = { links: LinkItem[] };
 
@@ -10,7 +12,7 @@ export const MobileMenu: FC<Props> = ({ links }) => {
     const popupToggleHandler = () => {
         setIsOpen(!isOpen);
     };
-    const setLinkHandler = () => {
+    const closePopUpHandler = () => {
         setIsOpen(false);
     };
     return (
@@ -21,9 +23,16 @@ export const MobileMenu: FC<Props> = ({ links }) => {
             <MobileMenuPopup $isOpen={isOpen}>
                 <ul>
                     {links.map((link) => (
-                        <li key={link.linkTitle} onClick={setLinkHandler}>
-                            <a href={link.linkUrl}>{link.linkTitle}</a>
-                        </li>
+                        <MenuItem key={link.linkTitle}>
+                            <NavLink
+                                activeClass={'active'}
+                                smooth={true}
+                                to={link.linkTitle.toLowerCase()}
+                                onClick={closePopUpHandler}
+                            >
+                                {link.linkTitle}
+                            </NavLink>
+                        </MenuItem>
                     ))}
                 </ul>
             </MobileMenuPopup>
@@ -41,31 +50,7 @@ const StyledMobileMenu = styled.nav`
         gap: 60px;
 
         li a {
-            position: relative;
-            color: ${theme.colors.headerLink};
             font-size: 32px;
-            transition: color 0.3s ease-out;
-            &::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                background-color: ${theme.colors.accent};
-                bottom: -2px;
-                left: 0;
-                transform-origin: right;
-                transform: scaleX(0);
-                transition: transform 0.3s ease-in-out;
-            }
-
-            &:hover {
-                color: #fff;
-            }
-
-            &:hover::before {
-                transform-origin: left;
-                transform: scaleX(1);
-            }
         }
     }
 
@@ -156,5 +141,35 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
                     transform: rotate(45deg) translateY(0);
                 `}
         }
+    }
+`;
+const NavLink = styled(Link)`
+    position: relative;
+    cursor: pointer;
+    color: ${theme.colors.headerLink};
+    transition: color 0.3s ease-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: ${theme.colors.accent};
+        bottom: -2px;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &.active {
+        color: #fff;
+    }
+
+    &:hover::before,
+    &.active::before {
+        transform-origin: left;
+        transform: scaleX(1);
     }
 `;

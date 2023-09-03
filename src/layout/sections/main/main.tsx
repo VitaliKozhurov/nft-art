@@ -43,7 +43,7 @@ const MainSection = styled.main`
     grid-template-columns: 1fr 1fr;
     column-gap: 170px;
     grid-template-areas: 'content image' 'statistics image';
-
+    margin-top: 84px;
     @media ${theme.media.bigDesktop} {
         column-gap: 100px;
     }

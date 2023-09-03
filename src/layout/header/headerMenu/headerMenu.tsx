@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
-
 import { theme } from '../../../styles/Theme';
+import { MenuItem, NavLink } from '../navLink/navLink';
 
 export type LinkItem = {
     linkTitle: string;
-    linkUrl: string;
 };
 
 type Props = { links: LinkItem[] };
@@ -16,11 +14,11 @@ export const HeaderMenu: FC<Props> = ({ links }) => {
         <StyledHeaderMenu>
             <ul>
                 {links.map((link) => (
-                    <li key={link.linkTitle}>
-                        <Link href={link.linkUrl} smooth={true} to={link.linkTitle.toLowerCase()}>
+                    <MenuItem key={link.linkTitle}>
+                        <NavLink activeClass={'active'} smooth={true} to={link.linkTitle.toLowerCase()}>
                             {link.linkTitle}
-                        </Link>
-                    </li>
+                        </NavLink>
+                    </MenuItem>
                 ))}
             </ul>
         </StyledHeaderMenu>
@@ -31,33 +29,6 @@ const StyledHeaderMenu = styled.nav`
     ul {
         display: flex;
         gap: 40px;
-
-        li a {
-            position: relative;
-            color: ${theme.colors.headerLink};
-            transition: color 0.3s ease-out;
-            &::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                background-color: ${theme.colors.accent};
-                bottom: -2px;
-                left: 0;
-                transform-origin: right;
-                transform: scaleX(0);
-                transition: transform 0.3s ease-in-out;
-            }
-
-            &:hover {
-                color: #fff;
-            }
-
-            &:hover::before {
-                transform-origin: left;
-                transform: scaleX(1);
-            }
-        }
     }
 
     @media ${theme.media.tablet} {

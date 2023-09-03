@@ -1,20 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Button, Container, FlexWrapper, Logo } from '../../components';
 import { HeaderMenu } from './headerMenu/headerMenu';
 import { theme } from '../../styles/Theme';
 import { MobileMenu } from './mobileMenu/mobileMenu';
+import { useWindowScroll } from '../../hooks/useWindowScroll';
 
 const links = [
-    { linkTitle: 'Marketplace', linkUrl: '#' },
-    { linkTitle: 'Artists', linkUrl: '#' },
-    { linkTitle: 'Community', linkUrl: '#' },
-    { linkTitle: 'Collections', linkUrl: '#' },
+    { linkTitle: 'Marketplace' },
+    { linkTitle: 'Artists' },
+    { linkTitle: 'Community' },
+    { linkTitle: 'Collections' },
 ];
 
 export const Header = () => {
+    const backGroundAfterScroll = useWindowScroll();
     return (
-        <StyledHeader>
+        <StyledHeader $changeBackGround={backGroundAfterScroll}>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo />
@@ -27,12 +29,24 @@ export const Header = () => {
     );
 };
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header<{ $changeBackGround: boolean }>`
     padding: 28px 0;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    ${(props) =>
+        props.$changeBackGround &&
+        css<{ $changeBackGround: boolean }>`
+            background-color: rgba(0, 0, 0, 0.8);
+        `}
 
     @media ${theme.media.tablet} {
-        padding: 40px 0 0;
+        padding: 30px 0;
     }
+
     ${FlexWrapper} {
         @media ${theme.media.desktop} {
             & > button {

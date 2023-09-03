@@ -40,16 +40,13 @@ const StyledButton = styled.button<Props>`
             &:hover {
                 background-color: transparent;
                 color: #fff;
-                box-shadow:
-                    0 0 3px 0 ${theme.colors.accent} inset,
-                    0 0 3px 2px ${theme.colors.accent};
+                outline: solid 2px ${theme.colors.accent};
             }
         `}
 
     ${(props) =>
         props.variant === 'outlined' &&
         css<Props>`
-            border: solid 1px ${theme.colors.accent};
             color: ${theme.colors.accent};
             background-image: linear-gradient(45deg, ${theme.colors.accent} 50%, transparent 50%);
             background-position: 100%;
