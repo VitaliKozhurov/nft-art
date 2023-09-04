@@ -32,6 +32,7 @@ const Circle = styled.div<{ width: number }>`
     z-index: 1000;
     left: -15px;
     top: 220px;
+    transition: all 0.4s ease;
 
     width: ${(props) => props.width}px;
     height: ${(props) => props.width}px;
@@ -40,7 +41,7 @@ const Circle = styled.div<{ width: number }>`
     justify-content: center;
     align-items: center;
     animation: rotate 15s linear infinite;
-    @media ${theme.media.bigMobile} {
+    @media ${theme.media.tablet} {
         left: 15px;
     }
     @media ${theme.media.mobile} {
@@ -53,6 +54,11 @@ const Circle = styled.div<{ width: number }>`
         100% {
             transform: rotate(0deg);
         }
+    }
+
+    &:hover {
+        scale: 1.2;
+        rotate: 60deg;
     }
 `;
 

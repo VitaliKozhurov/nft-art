@@ -27,6 +27,7 @@ const CardImage = styled.div<{ $imageUrl: string }>`
         linear-gradient(2deg, rgba(19, 30, 58, 0.92) 0%, rgba(19, 30, 58, 0) 70.62%),
         url(${(props) => props.$imageUrl}) no-repeat top / cover,
         lightgray 0px -29.153px / 100% 167.203% no-repeat;
+    transition: all 0.3s ease;
 
     &:nth-child(1) {
         grid-area: 1/1/1/4;
@@ -76,5 +77,8 @@ const CardImage = styled.div<{ $imageUrl: string }>`
         @media ${theme.media.bigMobile} {
             grid-area: 5/1/6/1;
         }
+    }
+    &:hover {
+        scale: 1.05;
     }
 `;

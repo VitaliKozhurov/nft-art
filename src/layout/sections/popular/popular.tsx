@@ -12,6 +12,7 @@ import {
 import { theme } from '../../../styles/Theme';
 import { PopularCard } from './popularCard/popularCard';
 import { cardsData, popularTitle } from './popularSectionData';
+import { Fade } from 'react-awesome-reveal';
 
 export const Popular = () => {
     return (
@@ -29,7 +30,7 @@ export const Popular = () => {
                             {cardsData.map((card) => (
                                 <PopularCard key={card.ownerName} {...card} />
                             ))}
-                        </CardsGridContainer>
+                        </CardsGridContainer>{' '}
                     </CardsGridItem>
                 </GridSectionContainer>
             </Container>

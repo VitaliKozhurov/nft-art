@@ -5,6 +5,7 @@ import { HeaderMenu } from './headerMenu/headerMenu';
 import { theme } from '../../styles/Theme';
 import { MobileMenu } from './mobileMenu/mobileMenu';
 import { useWindowScroll } from '../../hooks/useWindowScroll';
+import { Fade } from 'react-awesome-reveal';
 
 const links = [
     { linkTitle: 'Marketplace' },
@@ -18,12 +19,15 @@ export const Header = () => {
     return (
         <StyledHeader $changeBackGround={backGroundAfterScroll}>
             <Container>
-                <FlexWrapper justify={'space-between'} align={'center'}>
-                    <Logo />
-                    <HeaderMenu links={links} />
-                    <MobileMenu links={links} />
-                    <Button variant={'contained'}>Contact</Button>
-                </FlexWrapper>
+                {' '}
+                <Fade>
+                    <FlexWrapper justify={'space-between'} align={'center'}>
+                        <Logo />
+                        <HeaderMenu links={links} />
+                        <MobileMenu links={links} />
+                        <Button variant={'contained'}>Contact</Button>
+                    </FlexWrapper>
+                </Fade>
             </Container>
         </StyledHeader>
     );

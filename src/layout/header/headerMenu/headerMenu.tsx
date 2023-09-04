@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
 import { MenuItem, NavLink } from '../navLink/navLink';
+import { Fade } from 'react-awesome-reveal';
 
 export type LinkItem = {
     linkTitle: string;

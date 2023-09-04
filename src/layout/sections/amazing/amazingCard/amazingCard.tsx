@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../../styles/Theme';
 import { Button, FlexWrapper, Icon, Photo } from '../../../../components';
+import Tilt from 'react-parallax-tilt';
 
 type Props = {
     imageLink: string;
@@ -12,30 +13,39 @@ type Props = {
 
 export const AmazingCard: FC<Props> = ({ imageLink, cardTitle, price, time }) => {
     return (
-        <Card>
-            <CardImage>
-                <Photo src={imageLink} alt={'Card image'} />
-            </CardImage>
+        <Tilt
+            className="parallax-effect-img"
+            tiltMaxAngleX={25}
+            tiltMaxAngleY={25}
+            perspective={700}
+            transitionSpeed={1300}
+            gyroscope={true}
+        >
+            <Card>
+                <CardImage>
+                    <Photo src={imageLink} alt={'Card image'} />
+                </CardImage>
 
-            <CardPriceInfo>
-                <CardTitle>{cardTitle}</CardTitle>
-                <FlexWrapper align={'center'}>
-                    <Icon iconId={'control'} />
-                    <CardPrice>{price}ETH</CardPrice>
-                </FlexWrapper>
-            </CardPriceInfo>
-
-            <TimeInfo>
-                <FlexWrapper direction={'column'}>
-                    <TimeOutTitle>Ending In</TimeOutTitle>
+                <CardPriceInfo>
+                    <CardTitle>{cardTitle}</CardTitle>
                     <FlexWrapper align={'center'}>
-                        <Icon iconId={'clock'} />
-                        <Countdown>{time}</Countdown>
+                        <Icon iconId={'control'} />
+                        <CardPrice>{price}ETH</CardPrice>
                     </FlexWrapper>
-                </FlexWrapper>
-                <Button variant={'outlined'}>Place A Bid</Button>
-            </TimeInfo>
-        </Card>
+                </CardPriceInfo>
+
+                <TimeInfo>
+                    <FlexWrapper direction={'column'}>
+                        <TimeOutTitle>Ending In</TimeOutTitle>
+                        <FlexWrapper align={'center'}>
+                            <Icon iconId={'clock'} />
+                            <Countdown>{time}</Countdown>
+                        </FlexWrapper>
+                    </FlexWrapper>
+                    <Button variant={'outlined'}>Place A Bid</Button>
+                </TimeInfo>
+            </Card>
+        </Tilt>
     );
 };
 

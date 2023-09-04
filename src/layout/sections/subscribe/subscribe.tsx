@@ -105,7 +105,6 @@ const InputBox = styled.div`
     flex-direction: column;
     border-radius: 8px;
     background: ${theme.colors.cardBg};
-    padding: 16px 156px 16px 24px;
     position: relative;
 
     button {
@@ -128,7 +127,14 @@ const InputBox = styled.div`
 
 const Input = styled.input`
     color: ${theme.colors.textFont};
-    margin-right: 10px;
+    border-radius: 8px;
+    padding: 16px 166px 16px 24px;
+    &:focus {
+        outline: 1px solid ${theme.colors.accent};
+    }
+    @media ${theme.media.tablet} {
+        padding: 16px 24px;
+    }
 `;
 
 type SubscribeCardProps = {
@@ -151,7 +157,7 @@ const SubscribeCard = styled.div<SubscribeCardProps>`
     right: ${(props) => props.right};
     transform: ${(props) => props.transform};
     transform-origin: ${(props) => props.origin};
-
+    transition: all 0.3s ease;
     &:first-child {
         width: 60%;
         height: 376px;
@@ -191,5 +197,8 @@ const SubscribeCard = styled.div<SubscribeCardProps>`
             height: 200px;
             width: 60%;
         }
+    }
+    &:hover {
+        scale: 1.1;
     }
 `;

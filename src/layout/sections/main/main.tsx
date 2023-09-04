@@ -7,34 +7,37 @@ import mainPhoto from '../../../assets/images/main_section/main.webp';
 import { theme } from '../../../styles/Theme';
 import { mainDescription, mainStatistics, mainTitle } from './mainSectionData';
 import { CircleElement } from '../../../components/circleElement/circleElement';
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 export const Main = () => {
     return (
         <Container>
-            <MainSection>
-                <MainContent>
-                    <SectionTitle tagName={'h1'} title={mainTitle} />
-                    <SectionDescription>{mainDescription}</SectionDescription>
-                    <ButtonsContainer>
-                        <Button variant={'contained'}>Explore Now</Button>
-                        <Button variant={'link'}>Learn More</Button>
-                    </ButtonsContainer>
-                </MainContent>
+            <Fade delay={200} triggerOnce={true}>
+                <MainSection>
+                    <MainContent>
+                        <SectionTitle tagName={'h1'} title={mainTitle} />
+                        <SectionDescription>{mainDescription}</SectionDescription>
+                        <ButtonsContainer>
+                            <Button variant={'contained'}>Explore Now</Button>
+                            <Button variant={'link'}>Learn More</Button>
+                        </ButtonsContainer>
+                    </MainContent>
 
-                <MainStatistics>
-                    {mainStatistics.map((item) => (
-                        <StatisticItem key={item.title} title={item.title} count={item.count} />
-                    ))}
-                </MainStatistics>
+                    <MainStatistics>
+                        {mainStatistics.map((item) => (
+                            <StatisticItem key={item.title} title={item.title} count={item.count} />
+                        ))}
+                    </MainStatistics>
 
-                <MainImage>
-                    <PhotoWrapper>
-                        <Photo src={mainPhoto} alt={'Main section photo'} ratio={'17 / 20'} />
-                    </PhotoWrapper>
-                    <CircleElement />
-                    <MainImageCard />
-                </MainImage>
-            </MainSection>
+                    <MainImage>
+                        <PhotoWrapper>
+                            <Photo src={mainPhoto} alt={'Main section photo'} ratio={'17 / 20'} />
+                        </PhotoWrapper>
+                        <CircleElement />
+                        <MainImageCard />
+                    </MainImage>
+                </MainSection>
+            </Fade>
         </Container>
     );
 };

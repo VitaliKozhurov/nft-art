@@ -105,7 +105,7 @@ const BestCard = styled.div<BestCardProps>`
     bottom: ${(props) => props.bottom};
     left: ${(props) => props.left};
     right: ${(props) => props.right};
-
+    transition: all 0.3s ease;
     @media ${theme.media.desktop} {
         width: 60%;
     }
@@ -118,5 +118,8 @@ const BestCard = styled.div<BestCardProps>`
         &:last-child {
             height: 190px;
         }
+    }
+    &:hover {
+        scale: 1.1;
     }
 `;
