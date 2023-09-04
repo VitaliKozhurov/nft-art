@@ -5,18 +5,21 @@ import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
 
 export const amazingCardsData = [
     {
+        id: 1,
         imageLink: cyberpank,
         cardTitle: 'Cyberpunk Cocomo',
         price: '490',
         time: '03:24:56',
     },
     {
+        id: 2,
         imageLink: charge,
         cardTitle: 'Charge, Qi tiao yu',
         price: '490',
         time: '03:24:56',
     },
     {
+        id: 3,
         imageLink: surgeon,
         cardTitle: 'Surgeon, Josh Rife',
         price: '490',
@@ -25,7 +28,7 @@ export const amazingCardsData = [
 ];
 
 export const amazingSectionTitle: TitleTextType[] = [
-    { text: 'Amazing', type: 'accent' },
-    { text: ' and Super Unique Art of This ', type: 'primary' },
-    { text: 'Week', type: 'accent' },
+    { id: 1, text: 'Amazing', type: 'accent' },
+    { id: 2, text: ' and Super Unique Art of This ', type: 'primary' },
+    { id: 3, text: 'Week', type: 'accent' },
 ];

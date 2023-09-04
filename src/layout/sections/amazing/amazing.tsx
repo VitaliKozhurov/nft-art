@@ -10,8 +10,7 @@ import {
 } from '../../../components';
 import { AmazingCard } from './amazingCard/amazingCard';
 import { amazingCardsData, amazingSectionTitle } from './amazingSectionData';
-import styled from 'styled-components';
-import { theme } from '../../../styles/Theme';
+import { CardsGridItem } from './amazingSection_styles';
 
 export const Amazing = () => {
     return (
@@ -26,7 +25,7 @@ export const Amazing = () => {
                     </ButtonGridItem>
                     <CardsGridItem>
                         {amazingCardsData.map((card) => (
-                            <AmazingCard key={card.cardTitle} {...card} />
+                            <AmazingCard key={card.id} {...card} />
                         ))}
                     </CardsGridItem>
                 </GridSectionContainer>
@@ -34,25 +33,3 @@ export const Amazing = () => {
         </StyledSection>
     );
 };
-
-const CardsGridItem = styled.div`
-    grid-area: cards;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 64px;
-    align-items: stretch;
-
-    @media ${theme.media.bigDesktop} {
-        flex-wrap: wrap;
-    }
-
-    @media ${theme.media.tablet} {
-        gap: 24px;
-        margin: 32px 0;
-    }
-
-    @media ${theme.media.bigMobile} {
-        gap: 16px;
-    }
-`;

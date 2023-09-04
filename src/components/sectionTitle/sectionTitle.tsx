@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../styles/Theme';
 
-export type TitleTextType = { text: string; type: 'primary' | 'accent' };
+export type TitleTextType = { id: number; text: string; type: 'primary' | 'accent' };
 
 type Props = {
     tagName: 'h1' | 'h2';
@@ -13,7 +13,7 @@ type Props = {
 export const SectionTitle: FC<Props> = ({ tagName, maxWidth, title }) => {
     return (
         <StyledSectionTitle as={tagName} $maxWidth={maxWidth || '100%'} $tagName={tagName}>
-            {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan key={el.text}>{el.text}</StyledSpan>))}
+            {title.map((el) => (el.type === 'primary' ? el.text : <StyledSpan key={el.id}>{el.text}</StyledSpan>))}
         </StyledSectionTitle>
     );
 };

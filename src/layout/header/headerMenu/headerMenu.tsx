@@ -2,32 +2,30 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
 import { MenuItem, NavLink } from '../navLink/navLink';
-import { Fade } from 'react-awesome-reveal';
+import { LinksItem } from '../header';
 
-export type LinkItem = {
-    linkTitle: string;
-};
-
-type Props = { links: LinkItem[] };
+type Props = { links: LinksItem };
 
 export const HeaderMenu: FC<Props> = ({ links }) => {
     return (
-        <StyledHeaderMenu>
-            <ul>
+        <HeaderDesktopMenu>
+            <HeaderLinkList>
                 {links.map((link) => (
-                    <MenuItem key={link.linkTitle}>
+                    <MenuItem key={link.id}>
                         <NavLink activeClass={'active'} smooth={true} to={link.linkTitle.toLowerCase()}>
                             {link.linkTitle}
                         </NavLink>
                     </MenuItem>
                 ))}
-            </ul>
-        </StyledHeaderMenu>
+            </HeaderLinkList>
+        </HeaderDesktopMenu>
     );
 };
 
-const StyledHeaderMenu = styled.nav`
-    ul {
+const HeaderLinkList = styled.ul``;
+
+const HeaderDesktopMenu = styled.nav`
+    ${HeaderLinkList} {
         display: flex;
         gap: 40px;
     }

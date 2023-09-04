@@ -1,25 +1,29 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
+import { Fade } from 'react-awesome-reveal';
 
 type LinkProps = { linkUrl: string; linkTitle: string };
 
 type Props = {
+    id: number;
     title: string;
     links: LinkProps[];
 };
 
-export const About: FC<Props> = ({ title, links }) => {
+export const About: FC<Props> = ({ id, title, links }) => {
     return (
         <StyledAbout>
-            <StyledAboutTitle>{title}</StyledAboutTitle>
-            <StyledAboutList>
-                {links.map((link) => (
-                    <li key={link.linkTitle}>
-                        <a href={link.linkUrl || '#'}>{link.linkTitle}</a>
-                    </li>
-                ))}
-            </StyledAboutList>
+            <Fade triggerOnce={true} direction={'right'} delay={id * 200}>
+                <StyledAboutTitle>{title}</StyledAboutTitle>
+                <StyledAboutList>
+                    {links.map((link) => (
+                        <li key={link.linkTitle}>
+                            <a href={link.linkUrl || '#'}>{link.linkTitle}</a>
+                        </li>
+                    ))}
+                </StyledAboutList>
+            </Fade>
         </StyledAbout>
     );
 };

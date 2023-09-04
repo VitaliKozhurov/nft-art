@@ -8,18 +8,30 @@ export const MainImageCard = () => {
         <CardBox>
             <FlexWrapper justify={'space-between'}>
                 <CardItemInfo>
-                    <h5>Ends in</h5>
-                    <span>05:45:47</span>
+                    <CardSubtitle>Ends in</CardSubtitle>
+                    <CardParamsValue>05:45:47</CardParamsValue>
                 </CardItemInfo>
                 <CardItemInfo>
-                    <h5>Current bid</h5>
-                    <span>0.24ETH</span>
+                    <CardSubtitle>Current bid</CardSubtitle>
+                    <CardParamsValue>0.24ETH</CardParamsValue>
                 </CardItemInfo>
             </FlexWrapper>
             <Button variant={'outlined'}>Place A Bid</Button>
         </CardBox>
     );
 };
+
+const CardSubtitle = styled.h5`
+    color: ${theme.colors.accent};
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 10px;
+`;
+
+const CardParamsValue = styled.span`
+    font-weight: 700;
+    line-height: 1.2;
+`;
 
 const CardBox = styled.div`
     position: absolute;
@@ -43,16 +55,6 @@ const CardBox = styled.div`
 const CardItemInfo = styled.div`
     font-size: 16px;
     margin-bottom: 24px;
-    h5 {
-        color: ${theme.colors.accent};
-        font-weight: 400;
-        line-height: 1.6;
-        margin-bottom: 10px;
-    }
-    span {
-        font-weight: 700;
-        line-height: 1.2;
-    }
     @media ${theme.media.tablet} {
         font-size: 16px;
         margin-bottom: 16px;

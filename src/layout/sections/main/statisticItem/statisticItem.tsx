@@ -9,16 +9,24 @@ type Props = {
 
 export const StatisticItem: FC<Props> = ({ count, title }) => {
     return (
-        <StyledListItem>
-            <h2>
+        <ListItem>
+            <StatisticHeader>
                 {count}
                 <span>K</span>
-            </h2>
+            </StatisticHeader>
             <span>{title}</span>
-        </StyledListItem>
+        </ListItem>
     );
 };
-const StyledListItem = styled.li`
+const StatisticHeader = styled.h2`
+    color: ${theme.colors.accent};
+    margin-bottom: 8px;
+    span {
+        color: ${theme.colors.textFont};
+    }
+`;
+
+const ListItem = styled.li`
     &:not(:first-child) {
         padding-left: 94px;
     }
@@ -27,13 +35,6 @@ const StyledListItem = styled.li`
         border-right: 1px solid ${theme.colors.accent};
     }
 
-    h2 {
-        color: ${theme.colors.accent};
-        margin-bottom: 8px;
-        span {
-            color: ${theme.colors.textFont};
-        }
-    }
     & > span {
         font-size: 1rem;
         line-height: 1.6;

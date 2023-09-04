@@ -39,7 +39,7 @@ export const cardsData = [
 ];
 
 export const popularTitle: TitleTextType[] = [
-    { text: 'Popular ', type: 'primary' },
-    { text: 'Artists ', type: 'accent' },
-    { text: 'On This Week', type: 'primary' },
+    { id: 1, text: 'Popular ', type: 'primary' },
+    { id: 2, text: 'Artists ', type: 'accent' },
+    { id: 3, text: 'On This Week', type: 'primary' },
 ];

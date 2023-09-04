@@ -1,8 +1,8 @@
 import { TitleTextType } from '../../../components/sectionTitle/sectionTitle';
 
 export const bestSectionTitle: TitleTextType[] = [
-    { text: 'Create And Sell Your ', type: 'primary' },
-    { text: 'Best NFTs', type: 'accent' },
+    { id: 1, text: 'Create And Sell Your ', type: 'primary' },
+    { id: 2, text: 'Best NFTs', type: 'accent' },
 ];
 
 export const bestDescription =

@@ -3,6 +3,7 @@ export const footerDescription =
 
 export const footerData = [
     {
+        id: 1,
         title: 'Explore',
         links: [
             { linkUrl: '#', linkTitle: 'Art Sign In' },
@@ -12,6 +13,7 @@ export const footerData = [
         ],
     },
     {
+        id: 2,
         title: 'Statistic',
         links: [
             { linkUrl: '#', linkTitle: 'Ranking' },
@@ -20,6 +22,7 @@ export const footerData = [
         ],
     },
     {
+        id: 3,
         title: 'Company',
         links: [
             { linkUrl: '#', linkTitle: 'About Us' },
@@ -29,6 +32,7 @@ export const footerData = [
         ],
     },
     {
+        id: 4,
         title: 'Resources',
         links: [
             { linkUrl: '#', linkTitle: 'Help Center' },
